@@ -1,4 +1,5 @@
 #[derive(Debug)]
+#[derive(PartialEq)]
 enum Lang {
   English,
   Spanish,
@@ -26,7 +27,10 @@ fn main() {
   let g : Greeting = Greeting { lang: Lang::Japanese, message: String::from("WasmEdge、今日は！") };
   v.push(g);
 
+  let query_lang = Lang::Japanese;
   for e in v {
-    println!("{:?} {}", e.lang, e.message);
+    if e.lang == query_lang {
+      println!("{:?} {}", e.lang, e.message);
+    }
   }
 }
