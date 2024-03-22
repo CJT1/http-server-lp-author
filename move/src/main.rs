@@ -20,6 +20,6 @@ fn take (mut s: String) {
 
 fn borrow (s: &mut String) {
   // let mut buf = String::from(s);
-  s.push_str(" WasmEdge!");
+  (*s).push_str(" WasmEdge!");
   println!("From borrow(): {}", s);
 }
